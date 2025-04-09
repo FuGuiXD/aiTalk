@@ -13,7 +13,7 @@ var dom = {
 }
 const BASE_URL = 'https://study.duyiedu.com'
 const TOKEN_KEY = 'token'
-if (window.location.pathname !== '/login.html') {
+if (window.location.pathname === '/index.html') {
     if (!localStorage.getItem(TOKEN_KEY)) {
         window.location.href = './login.html';
     }
