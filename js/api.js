@@ -9,11 +9,17 @@ var dom = {
     chat_container: document.querySelector('.container .chat-container'),
     sendChatButton: document.querySelector('button'),
     txtMsg: document.querySelector('#txtMsg'),
-    logOut:document.querySelector('.close')
+    logOut: document.querySelector('.close')
+}
+const BASE_URL = 'https://study.duyiedu.com'
+const TOKEN_KEY = 'token'
+if (window.location.pathname !== '/login.html') {
+    if (!localStorage.getItem(TOKEN_KEY)) {
+        window.location.href = './login.html';
+    }
 }
 var API = (() => {
-    const BASE_URL = 'https://study.duyiedu.com'
-    const TOKEN_KEY = 'token'
+
     function get(url) {
         const headers = {};
         const token = localStorage.getItem(TOKEN_KEY);
